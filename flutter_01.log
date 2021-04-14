@@ -1,0 +1,76 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+ProcessException: ProcessException: Process exited abnormally:
+adb: error: more than one device
+  Command: /home/furkan/Android/Sdk/platform-tools/adb -s 0123456789ABCDEF forward --remove tcp:42747
+
+```
+#0      RunResult.throwException (package:flutter_tools/src/base/process.dart:172:5)
+#1      AndroidDevicePortForwarder.unforward (package:flutter_tools/src/android/android_device.dart:1331:15)
+<asynchronous suspension>
+#2      AndroidDevicePortForwarder.dispose (package:flutter_tools/src/android/android_device.dart:1337:13)
+#3      AndroidDevice.dispose (package:flutter_tools/src/android/android_device.dart:837:27)
+#4      HotRunner.cleanupAtFinish (package:flutter_tools/src/run_hot.dart:1158:34)
+#5      ResidentRunner.waitForAppToFinish (package:flutter_tools/src/resident_runner.dart:1255:11)
+<asynchronous suspension>
+#6      HotRunner.attach (package:flutter_tools/src/run_hot.dart:318:22)
+#7      _rootRunUnary (dart:async/zone.dart:1198:47)
+#8      _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#9      _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+#10     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+#11     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+#12     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+#13     _AsyncAwaitCompleter.complete (dart:async-patch/async_patch.dart:40:15)
+#14     _completeOnAsyncReturn (dart:async-patch/async_patch.dart:311:13)
+#15     FlutterVmService.getFlutterViews (package:flutter_tools/src/vmservice.dart)
+#16     _rootRunUnary (dart:async/zone.dart:1198:47)
+#17     _CustomZone.runUnary (dart:async/zone.dart:1100:19)
+#18     _FutureListener.handleValue (dart:async/future_impl.dart:143:18)
+#19     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:696:45)
+#20     Future._propagateToListeners (dart:async/future_impl.dart:725:32)
+#21     Future._completeWithValue (dart:async/future_impl.dart:529:5)
+#22     Future._asyncCompleteWithValue.<anonymous closure> (dart:async/future_impl.dart:567:7)
+#23     _rootRun (dart:async/zone.dart:1190:13)
+#24     _CustomZone.run (dart:async/zone.dart:1093:19)
+#25     _CustomZone.runGuarded (dart:async/zone.dart:997:7)
+#26     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1037:23)
+#27     _microtaskLoop (dart:async/schedule_microtask.dart:41:21)
+#28     _startMicrotaskLoop (dart:async/schedule_microtask.dart:50:5)
+#29     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#30     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:169:5)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 1.20.2, on Linux, locale en_US.UTF-8)
+    • Flutter version 1.20.2 at /home/furkan/snap/flutter/common/flutter
+    • Framework revision bbfbf1770c (6 weeks ago), 2020-08-13 08:33:09 -0700
+    • Engine revision 9d5b21729f
+    • Dart version 2.9.1
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.1)
+    • Android SDK at /home/furkan/Android/Sdk
+    • Platform android-30, build-tools 30.0.1
+    • Java binary at: /Storage/android-studio/jre/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6222593)
+    • All Android licenses accepted.
+
+[✓] Android Studio (version 4.0)
+    • Android Studio at /Storage/android-studio
+    • Flutter plugin version 47.1.2
+    • Dart plugin version 193.7361
+    • Java version OpenJDK Runtime Environment (build 1.8.0_242-release-1644-b3-6222593)
+
+[✓] Connected device (1 available)
+    • Casper VIA V9 (mobile) • 0123456789ABCDEF • android-arm64 • Android 5.1 (API 22)
+
+• No issues found!
+```

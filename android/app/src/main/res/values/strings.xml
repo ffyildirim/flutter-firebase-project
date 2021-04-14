@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="app_name">MeetApp</string>
+   <string name="facebook_app_id">301486347851465</string>
+   <string name="fb_login_protocol_scheme">fb301486347851465</string>
+
+</resources>
